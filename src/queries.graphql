@@ -1,0 +1,17 @@
+query GetStudents {
+    students {
+     id
+     firstName
+     lastName
+     role
+     imageUrl
+     linkedinUrl
+     twitterUrl
+    }
+}
+
+mutation DeleteStudent($_id: Int) {
+    deleteStudent(_id: $_id) {
+      ok
+    }
+  }
