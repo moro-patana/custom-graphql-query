@@ -10,8 +10,8 @@ query GetStudents {
     }
 }
 
-mutation DeleteStudent($_id: Int) {
-    deleteStudent(_id: $_id) {
-      ok
+mutation DeleteStudent($id: Int!) {
+    deleteStudent(id: $id) {
+      id
     }
   }
