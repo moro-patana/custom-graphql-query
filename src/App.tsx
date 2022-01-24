@@ -3,6 +3,8 @@ import { useState } from "react";
 import './index.css'
 import DeleteStudentModal from "./components/Deletestudent";
 import UpdateStudent from "./components/UpdateStudent";
+import AddStudent from "./components/AddStudent";
+
 export default function App() {
   const { loading, error, data } = useGetStudentsQuery();
 
@@ -10,6 +12,8 @@ export default function App() {
   const [studentId, setStudentId] = useState<number>(0);
   const [editStudentForm, setEditStudentForm] = useState(false);
   const [editStudentId, setEditStudentId] = useState<number>(0);
+  const [addStudentForm, setAddStudentForm] = useState(false);
+
 
   const listToEdit = data?.students?.find((student) => student?.id === editStudentId);
 
@@ -21,6 +25,12 @@ export default function App() {
         <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
           <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
             <h1 className="text-4xl font-extrabold text-center p-4 m-0">List of Students</h1>
+            <div className="flex justify-end p-6">
+              <button
+              onClick={() => setAddStudentForm(true)}
+              className="border-none bg-red-500 rounded-md px-4 py-2 text-white focus:outline-none focus:ring-0"
+              >Add a student</button>
+            </div>
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">
                 <tr>
@@ -96,6 +106,9 @@ export default function App() {
       )}
       {open && <DeleteStudentModal open={open} setOpen={setOpen} studentId={studentId} setStudentId={setStudentId} />
       }
+      {addStudentForm && (
+        <AddStudent addStudentForm={addStudentForm} setAddStudentForm={setAddStudentForm} />
+      )}
     </div>
   )
 }
