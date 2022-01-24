@@ -54,7 +54,7 @@ const UpdateStudent = ({
             &#8203;
           </span>
           <div className="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-4 sm:align-middle sm:max-w-sm sm:w-full sm:p-6">
-            <h4 className="text-center p-4 text-gray-500">Edit API Key</h4>
+            <h4 className="text-center p-4 text-gray-500">Edit a student</h4>
             <form className="m-2 flex flex-col gap-6 p-4" onSubmit={handleSubmit}>
               <div className="input-field border-b border-solid border-gray-500">
                 <input
