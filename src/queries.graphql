@@ -15,3 +15,27 @@ mutation DeleteStudent($id: Int!) {
       id
     }
   }
+mutation AddStudent($firstName: String!,$lastName: String!, $id: Int!,$role: String,$twitterUrl: String,$linkedinUrl: String,$imageUrl: String) {
+    addStudent(firstName:$firstName,lastName:$lastName,role:$role,id:$id,imageUrl:$imageUrl,twitterUrl:$twitterUrl,linkedinUrl:$linkedinUrl
+    ){
+    firstName
+    lastName
+    role
+    id
+    imageUrl
+    twitterUrl
+    linkedinUrl
+    }
+}
+
+mutation UpdateStudent($id: Int, $firstName:String, $lastName:String, $role:String, $imageUrl: String, $linkedinUrl: String, $twitterUrl:String) {
+    updateStudent(id:$id, firstName:$firstName, lastName:$lastName, role:$role, imageUrl:$imageUrl, linkedinUrl: $linkedinUrl, twitterUrl:$twitterUrl) {
+      firstName
+      lastName
+      role
+      id
+      imageUrl
+      twitterUrl
+      linkedinUrl
+    }
+}
