@@ -133,7 +133,6 @@ const UpdateStudent = ({
               </div>
               <div className="input-field border-b border-solid border-gray-500">
                 <input
-                  required
                   className="focus:ring-0 focus:bg-white border-none p-0 text-sm text-gray-500"
                   value={formState.twitterUrl}
                   onChange={(e) =>
@@ -148,7 +147,6 @@ const UpdateStudent = ({
               </div>
               <div className="input-field border-b border-solid border-gray-500">
                 <input
-                  required
                   className="focus:ring-0 focus:bg-white border-none p-0 text-sm text-gray-500"
                   value={formState.linkedinUrl}
                   onChange={(e) =>
