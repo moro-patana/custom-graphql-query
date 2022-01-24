@@ -27,8 +27,8 @@ export default function App() {
             <h1 className="text-4xl font-extrabold text-center p-4 m-0">List of Students</h1>
             <div className="flex justify-end p-6">
               <button
-              onClick={() => setAddStudentForm(true)}
-              className="border-none bg-red-500 rounded-md px-4 py-2 text-white focus:outline-none focus:ring-0"
+                onClick={() => setAddStudentForm(true)}
+                className="border-none bg-red-500 rounded-md px-4 py-2 text-white focus:outline-none focus:ring-0"
               >Add a student</button>
             </div>
             <table className="min-w-full divide-y divide-gray-200">
@@ -80,15 +80,17 @@ export default function App() {
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{person?.lastName}</td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{person?.role}</td>
                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                      <button onClick={() => {
-                        setOpen(true)
-                        setStudentId(Number(person?.id))
-                      }}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z" /><path d="M7 6V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3h5v2h-2v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8H2V6h5zm6.414 8l1.768-1.768-1.414-1.414L12 12.586l-1.768-1.768-1.414 1.414L10.586 14l-1.768 1.768 1.414 1.414L12 15.414l1.768 1.768 1.414-1.414L13.414 14zM9 4v2h6V4H9z" /></svg></button>
-                      <button onClick={() => {
-                        setEditStudentForm(true)
-                        setEditStudentId(Number(person?.id))
-                      }}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z" /><path d="M12.9 6.858l4.242 4.243L7.242 21H3v-4.243l9.9-9.9zm1.414-1.414l2.121-2.122a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414l-2.122 2.121-4.242-4.242z" /></svg></button>
-                    </td>
+                      <div className="flex flex-row gap-4">
+                        <button
+                          onClick={() => {
+                            setOpen(true)
+                            setStudentId(Number(person?.id))
+                          }}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z" /><path d="M7 6V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3h5v2h-2v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8H2V6h5zm2-2v2h6V4H9z" /></svg></button>
+                        <button onClick={() => {
+                          setEditStudentForm(true)
+                          setEditStudentId(Number(person?.id))
+                        }}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z" /><path d="M15.728 9.686l-1.414-1.414L5 17.586V19h1.414l9.314-9.314zm1.414-1.414l1.414-1.414-1.414-1.414-1.414 1.414 1.414 1.414zM7.242 21H3v-4.243L16.435 3.322a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414L7.243 21z" /></svg></button>
+                      </div>                    </td>
                   </tr>
                 ))}
               </tbody>
